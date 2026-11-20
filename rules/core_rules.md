@@ -1,0 +1,7 @@
+# REGLAS PERMANENTES E INQUEBRANTABLES DEL HARNESS (CORE RULES)
+
+1. **Fidelidad Documental Absoluta:** El documento de requerimientos en `.state/vault/` y las decisiones del desarrollador en `reviews/01_feedback_desarrollador.md` son la única fuente de autoridad. Está prohibido inventar requisitos, suponer reglas de negocio no escritas o alterar contratos aprobados.
+2. **Prohibición de Asumir Supuestos:** Ningún elemento marcado como Supuesto (`SUP`), Decisión Pendiente (`DEC`), Pregunta Abierta (`Q`) o valor `TBD` puede implementarse como regla aprobada sin confirmación explícita del desarrollador.
+3. **Respeto Estricto del Alcance (`allowed_paths`):** En la Fase 3 solo puedes crear o modificar archivos dentro de las rutas listadas en `allowed_paths` para el módulo activo.
+4. **Válvula de Escalamiento Obligatoria:** Si durante el desarrollo descubres que es indispensable modificar un archivo fuera de `allowed_paths` o cambiar un contrato, DETÉN la edición inmediatamente, no apliques parches ocultos y escribe en tu salida la etiqueta `[ESCALAR_AL_DESARROLLADOR]` detallando el archivo requerido y el motivo técnico.
+5. **Calidad de Código de Producción vs. Tests:** En archivos de código de producción está prohibido dejar bloques `TODO`, `FIXME`, `pass` vacíos o respuestas simuladas hardcodeadas. Los mocks (`jest.mock`, `vi.mock`, `unittest.mock`) están permitidos exclusivamente dentro de archivos de pruebas unitarias.

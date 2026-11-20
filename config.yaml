@@ -1,0 +1,23 @@
+project_name: "YacaJobs-Pilot"
+# Ruta al repositorio real del proyecto sobre el cual trabajará el harness
+project_root: "../yacajobs-repo"
+
+adapter:
+  type: "antigravity_cli"
+  binary: "agy"
+  # Plantilla de comando: {context_file} se reemplaza por la ruta a .state/active_context.md
+  # Si tu versión de agy recibe el prompt por stdin o flag, puedes ajustarlo aquí sin tocar código Python.
+  args_template: ["--prompt-file", "{context_file}"]
+  use_stdin: false
+  timeout_seconds: 900
+
+testing:
+  # Comando ejecutado dentro de project_root con shell=False
+  unit_test_cmd: "npm test -- --watchAll=false"
+  regression_test_cmd: "npm run test:ci"
+  timeout_seconds: 300
+
+limits:
+  max_module_retries: 3
+  require_clean_git_before_build: true
+  allowed_doc_extensions: [".md", ".txt", ".sql", ".json", ".yaml", ".yml"]

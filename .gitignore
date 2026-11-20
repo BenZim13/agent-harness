@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales
+.venv/
+venv/
+ENV/
+
+# Estado interno del harness
+.state/*
+!.state/.gitkeep
+
+# Entrada documental de trabajo
+inbox/*
+!inbox/.gitkeep
+
+# Entregables y revisiones por corrida
+reviews/*
+!reviews/.gitkeep
