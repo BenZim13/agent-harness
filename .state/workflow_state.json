@@ -1,0 +1,11 @@
+{
+  "current_state": "IDLE",
+  "updated_at": "2026-11-20T16:27:46.374272",
+  "approvals": {
+    "phase1_approved_at": null,
+    "plan_approved_at": null,
+    "final_verified_at": null
+  },
+  "modules": {},
+  "history": []
+}

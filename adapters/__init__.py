@@ -1,1 +1,3 @@
-"""Adaptadores de ejecución para el Agent Harness."""
+from adapters.antigravity import UniversalAgentAdapter, AntigravityAdapter, PROVIDER_PRESETS
+
+__all__ = ["UniversalAgentAdapter", "AntigravityAdapter", "PROVIDER_PRESETS"]

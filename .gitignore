@@ -2,20 +2,21 @@
 __pycache__/
 *.py[cod]
 *$py.class
+.pytest_cache/
 
 # Entornos virtuales
 .venv/
 venv/
 ENV/
 
-# Estado interno del harness
-.state/*
-!.state/.gitkeep
+# Configuración personal por desarrollador (NO se sube a Git)
+config.local.yaml
 
-# Entrada documental de trabajo
-inbox/*
-!inbox/.gitkeep
+# Archivos efímeros y locales del estado (el estado compartido y reviews SÍ se versionan)
+.state/active_context.md
+.state/*.lock
+.state/*.tmp
+.state/*.bak
+.state/vault/*.bak
+.state/rollback_backups/
 
-# Entregables y revisiones por corrida
-reviews/*
-!reviews/.gitkeep

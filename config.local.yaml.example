@@ -1,0 +1,26 @@
+# Plantilla de configuración personal por desarrollador.
+# Copia este archivo como 'config.local.yaml' (está en .gitignore para no pisar a tus compañeros).
+
+project_name: "YacaJobs-Pilot"
+# Ruta local en tu computadora hacia el repositorio del proyecto:
+project_root: "../yacajobs-repo"
+
+developer:
+  # Opcional: Si no se especifica, el harness toma automáticamente `git config user.name` y `user.email`
+  name: ""
+  email: ""
+
+adapter:
+  # Elige tu IA: "antigravity" | "claude" | "codex" | "gemini" | "aider" | "custom_cli" | "manual"
+  provider: "antigravity"
+  # Usa "cli" para ejecución automática por terminal o "manual" si trabajas desde el chat de tu IDE (Zed ACP, Cursor, Windsurf, Copilot)
+  mode: "cli"
+  # Puedes personalizar el binario o los argumentos de tu versión local:
+  # binary: "agy"
+  # args_template: []
+  # use_stdin: true
+
+testing:
+  # Sobrescribe los comandos de test si en tu entorno usas pytest, pnpm, bun, etc.
+  unit_test_cmd: "npm test -- --watchAll=false"
+  regression_test_cmd: "npm run test:ci"
